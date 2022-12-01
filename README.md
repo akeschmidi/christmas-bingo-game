@@ -1,0 +1,1 @@
+# partybingo-gh-pages
