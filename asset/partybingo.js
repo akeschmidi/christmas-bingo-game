@@ -4,6 +4,7 @@
 	var resetButton = $('#reset-button');
 	var historiesDiv = $('#histories');
 	var drumAudio = $('#drum').get(0);
+	var tuschAudio = $('#tusch').get(0)
 	
 	// init histories
 	var toBingoString = function(n){
@@ -93,6 +94,7 @@
 		pingoNumber.text(toBingoString(n));
 		addHistory(n);
 		drumAudio.pause();
+		tuschAudio.play()
 	};
 	var start = function(){
 		isStarted = true;
