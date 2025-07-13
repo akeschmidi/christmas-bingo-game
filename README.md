@@ -1,6 +1,6 @@
 # 🎄 Weihnachts-Bingo
 
-[![Live Demo](https://img.shields.io/badge/DEMO-LIVE-brightgreen.svg)](https://akeschmidi.github.io/christmas-bingo/) 
+[![Live Demo](https://img.shields.io/badge/DEMO-LIVE-brightgreen.svg)](https://akeschmidi.github.io/christmas-bingo-game/) 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3.svg)](https://getbootstrap.com/)
 [![jQuery](https://img.shields.io/badge/jQuery-3.6.0-0769AD.svg)](https://jquery.com/)
@@ -19,7 +19,7 @@
 
 ## 🔴 Live Demo
 
-**[Weihnachts-Bingo Live Demo hier ausprobieren](https://akeschmidi.github.io/christmas-bingo/)**
+**[Weihnachts-Bingo Live Demo hier ausprobieren](https://akeschmidi.github.io/christmas-bingo-game/)**
 
 ## 📸 Screenshot
 
@@ -31,10 +31,10 @@
 
 ```bash
 # Mit GitHub CLI klonen
-git clone https://github.com/akeschmidi/christmas-bingo.git
+git clone https://github.com/akeschmidi/christmas-bingo-game.git
 
 # In das Projektverzeichnis wechseln
-cd christmas-bingo
+cd christmas-bingo-game
 
 # Im Browser öffnen
 open index.html
@@ -42,7 +42,7 @@ open index.html
 
 ### Option 2: Als ZIP herunterladen
 
-1. Klicken Sie auf die grüne "Code"-Schaltfläche oben im [GitHub-Repository](https://github.com/akeschmidi/christmas-bingo)
+1. Klicken Sie auf die grüne "Code"-Schaltfläche oben im [GitHub-Repository](https://github.com/akeschmidi/christmas-bingo-game)
 2. Wählen Sie "ZIP herunterladen"
 3. Entpacken Sie die ZIP-Datei
 4. Öffnen Sie `index.html` in Ihrem Webbrowser
@@ -72,7 +72,7 @@ Dieses Projekt ist unter der MIT-Lizenz lizenziert - siehe die [LICENSE](LICENSE
 
 ## 👥 Mitwirken
 
-Beiträge, Issues und Feature-Anfragen sind willkommen! Schauen Sie gerne auf der [Issues-Seite](https://github.com/akeschmidi/christmas-bingo/issues) vorbei.
+Beiträge, Issues und Feature-Anfragen sind willkommen! Schauen Sie gerne auf der [Issues-Seite](https://github.com/akeschmidi/christmas-bingo-game/issues) vorbei.
 
 ---
 
