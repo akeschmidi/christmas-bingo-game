@@ -1,130 +1,788 @@
 /*
- * Globals
+ * Christmas Party Bingo - Modern Theme
  */
+
+/* Variables */
+:root {
+  --christmas-red: #d42426;
+  --christmas-green: #0a8754;
+  --christmas-gold: #f8b229;
+  --snow-white: #ffffff;
+  --dark-green: #0a5c36;
+  --light-red: #e57373;
+}
+
+/* Global Styles */
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #0a5c36 0%, #0a8754 100%);
+  min-height: 100vh;
+  color: var(--snow-white);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ffffff" opacity="0.05" d="M96,0H4C1.8,0,0,1.8,0,4v92c0,2.2,1.8,4,4,4h92c2.2,0,4-1.8,4-4V4C100,1.8,98.2,0,96,0z M50,77.5c-15.2,0-27.5-12.3-27.5-27.5S34.8,22.5,50,22.5S77.5,34.8,77.5,50S65.2,77.5,50,77.5z"/><path fill="%23ffffff" opacity="0.05" d="M50,26.5c-12.9,0-23.5,10.6-23.5,23.5S37.1,73.5,50,73.5S73.5,62.9,73.5,50S62.9,26.5,50,26.5z M50,66.5c-9.1,0-16.5-7.4-16.5-16.5S40.9,33.5,50,33.5S66.5,40.9,66.5,50S59.1,66.5,50,66.5z"/></svg>');
+  background-size: 100px 100px;
+  opacity: 0.5;
+  z-index: -2;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: radial-gradient(ellipse at top, rgba(255,255,255,0.1) 0%, rgba(10,92,54,0) 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Snow Effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1536" preserveAspectRatio="xMidYMax slice"><g fill="%23FFF" fill-opacity="0.3"><circle cx="512" cy="84" r="2"/><circle cx="23" cy="224" r="3"/><circle cx="148" cy="325" r="1.8"/><circle cx="777" cy="166" r="1.5"/><circle cx="599" cy="443" r="2.5"/><circle cx="352" cy="245" r="2"/><circle cx="154" cy="159" r="1"/><circle cx="103" cy="535" r="3"/><circle cx="639" cy="65" r="1.5"/><circle cx="887" cy="194" r="2.5"/><circle cx="959" cy="327" r="1.8"/><circle cx="288" cy="404" r="1.3"/><circle cx="403" cy="128" r="1.4"/><circle cx="901" cy="464" r="2"/><circle cx="530" cy="298" r="1"/><circle cx="873" cy="56" r="1.5"/><circle cx="230" cy="520" r="2"/><circle cx="48" cy="396" r="2.2"/><circle cx="727" cy="326" r="2.5"/><circle cx="420" cy="370" r="3"/><circle cx="684" cy="223" r="1.2"/><circle cx="270" cy="25" r="1.5"/><circle cx="953" cy="99" r="2"/></g></svg>');
+  z-index: -1;
+  opacity: 0.7;
+  animation: snow 20s linear infinite;
+}
+
+@keyframes snow {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 1000px; }
+}
 
 /* Links */
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: var(--snow-white);
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
+a:hover {
+  color: var(--christmas-gold);
+}
+
+/* Layout & Container Styles */
+.container {
+  max-width: 1200px;
+  padding: 2rem;
+}
+
+/* Header Styles */
+header {
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--christmas-gold), transparent);
+}
+
+/* Christmas Decorations */
+.christmas-light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: repeating-linear-gradient(90deg, 
+    var(--christmas-red) 0px, var(--christmas-red) 10px,
+    var(--christmas-green) 10px, var(--christmas-green) 20px,
+    var(--christmas-gold) 20px, var(--christmas-gold) 30px,
+    #3498db 30px, #3498db 40px);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  z-index: 100;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  header {
+    padding: 1.5rem 0.5rem;
+  }
+}
+
+/* Christmas Title Animation */
+@keyframes glow {
+  0% { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+  50% { text-shadow: 0 0 20px var(--christmas-gold), 0 0 30px var(--christmas-red); }
+  100% { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
 }
 
 /*
- * Base structure
+ * Christmas Party Bingo
  */
 
-html,
-body {
-  height: 100%;
-  background-color: #333;
-}
-body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-/* Padding for spacing */
-.inner {
-  padding: 40px;
-}
-
-/*
- * Cover
- */
-
-.cover {
-  padding: 0 20px;
-}
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
-}
-
-
-/*
- * Affix and center
- */
-
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 700px;
-  }
-}
-
-/*
- * Party Bingo
- */
-#pingo-number {
-  font-size: 240pt
-}
-#start-button {
-  font-size: 60pt;
-  padding: 10px 140px
-}
-#reset-button {
-  font-size: 16pt;
-  padding: 49px 10px
-}
-.histories {
-  width: 90%
-}
-.history-number {
-  font-size: 40pt;
-  margin: 5px 40px
-}
+/* Main Title */
 h1 {
- font-size: 80px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--snow-white);
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+  animation: glow 3s ease-in-out infinite;
+  position: relative;
+  background: linear-gradient(90deg, var(--christmas-red), var(--snow-white), var(--christmas-green));
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShine 5s linear infinite;
+  letter-spacing: 1px;
+}
+
+@keyframes textShine {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+h1::before, h1::after {
+  content: '🎄';
+  position: relative;
+  margin: 0 15px;
+  font-size: 3rem;
+  animation: bounce 2s ease-in-out infinite alternate;
+  -webkit-text-fill-color: initial;
+  text-shadow: 0 0 15px rgba(248,178,41,0.7);
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-10px) rotate(5deg); }
+}
+
+/* Bingo Number Display */
+.number-container {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  margin: 2rem auto;
+  perspective: 1000px;
+}
+
+#pingo-number {
+  font-size: 10rem;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #f0f0f0);
+  color: var(--christmas-red);
+  font-weight: 900;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.3), 
+    inset 0 -5px 15px rgba(0,0,0,0.1),
+    0 0 40px var(--christmas-gold);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  animation: floatBall 6s ease-in-out infinite;
+}
+
+@keyframes floatBall {
+  0%, 100% { transform: translateY(0) rotateY(0deg); }
+  25% { transform: translateY(-10px) rotateY(5deg); }
+  50% { transform: translateY(0) rotateY(0deg); }
+  75% { transform: translateY(10px) rotateY(-5deg); }
+}
+
+#pingo-number::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40px;
+  background: repeating-linear-gradient(90deg, 
+    var(--christmas-red) 0px, var(--christmas-red) 10px,
+    var(--christmas-green) 10px, var(--christmas-green) 20px);
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+#pingo-number::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 70%, transparent 60%, rgba(255,255,255,0.8) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+#pingo-number:hover {
+  transform: scale(1.05) rotate(5deg);
+  box-shadow: 
+    0 15px 40px rgba(0,0,0,0.4), 
+    inset 0 -8px 25px rgba(0,0,0,0.2),
+    0 0 60px var(--christmas-gold);
+  animation-play-state: paused;
+}
+
+/* Add sparkles around the bingo ball */
+.number-container::before,
+.number-container::after {
+  content: '✨';
+  position: absolute;
+  font-size: 2rem;
+  animation: sparkle 2s ease-in-out infinite alternate;
+}
+
+.number-container::before {
+  top: 0;
+  right: 30px;
+  animation-delay: 0.5s;
+}
+
+.number-container::after {
+  bottom: 30px;
+  left: 20px;
+  animation-delay: 1s;
+}
+
+@keyframes sparkle {
+  0% { opacity: 0.3; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Game Buttons */
+#buttons {
+  position: relative;
+  z-index: 10;
+}
+
+#buttons::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23d42426" opacity="0.3" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,229.3C960,235,1056,277,1152,277.3C1248,277,1344,235,1392,213.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  top: -20px;
+  left: 0;
+  z-index: -1;
+}
+
+#start-button {
+  font-size: 2rem;
+  padding: 1rem 3rem 1rem 5rem;
+  background: linear-gradient(45deg, var(--christmas-red), #b71c1c, var(--christmas-red));
+  background-size: 200% auto;
+  border: none;
+  color: var(--snow-white);
+  border-radius: 50px;
+  box-shadow: 
+    0 8px 15px rgba(0,0,0,0.3), 
+    0 0 0 4px rgba(255,255,255,0.2),
+    inset 0 0 10px rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  animation: buttonPulse 3s infinite alternate;
+}
+
+@keyframes buttonPulse {
+  0% { box-shadow: 0 8px 15px rgba(0,0,0,0.3), 0 0 0 4px rgba(255,255,255,0.2), inset 0 0 10px rgba(255,255,255,0.2); }
+  100% { box-shadow: 0 8px 25px rgba(212,36,38,0.5), 0 0 0 4px rgba(255,255,255,0.3), inset 0 0 20px rgba(255,255,255,0.3); }
+}
+
+#start-button::before {
+  content: '🎅';
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.7));
+}
+
+#start-button::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+#start-button:hover {
+  background-position: right center;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.4), 0 0 0 6px rgba(255,255,255,0.3);
+}
+
+#start-button:hover::after {
+  opacity: 1;
+}
+
+#reset-button {
+  font-size: 1.2rem;
+  padding: 0.75rem 2rem 0.75rem 3rem;
+  background: linear-gradient(45deg, var(--christmas-green), #00695c, var(--christmas-green));
+  background-size: 200% auto;
+  border: none;
+  color: var(--snow-white);
+  border-radius: 50px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2), 0 0 0 3px rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+  margin: 1rem;
+  font-weight: 600;
+  position: relative;
+}
+
+#reset-button::before {
+  content: '↻';
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+#reset-button:hover {
+  background-position: right center;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.3), 0 0 0 4px rgba(255,255,255,0.2);
+}
+
+/* History Section */
+section:has(#histories) {
+  position: relative;
+  padding: 2rem 0;
+}
+
+section:has(#histories)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--christmas-gold), transparent);
+}
+
+section:has(#histories) h3 {
+  position: relative;
+  display: inline-block;
+  padding: 0 2rem;
+}
+
+section:has(#histories) h3::before,
+section:has(#histories) h3::after {
+  content: '❄';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: var(--christmas-gold);
+  text-shadow: 0 0 10px rgba(248,178,41,0.7);
+}
+
+section:has(#histories) h3::before {
+  left: 0;
+}
+
+section:has(#histories) h3::after {
+  right: 0;
+}
+
+/* History Numbers */
+#histories {
+  max-width: 900px;
+  margin: 2rem auto;
+  position: relative;
+  padding: 1rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.1);
+}
+
+.history-number {
+  font-size: 1.8rem;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--christmas-gold), #e6a800);
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.3), 
+    0 0 15px rgba(248,178,41,0.5),
+    inset 0 0 10px rgba(255,255,255,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin: 0.5rem;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+  animation: appearWithDelay 0.5s backwards;
+}
+
+@keyframes appearWithDelay {
+  from { opacity: 0; transform: scale(0.5) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.history-number:nth-child(3n) {
+  background: radial-gradient(circle at 30% 30%, var(--christmas-red), #b71c1c);
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.3), 
+    0 0 15px rgba(212,36,38,0.5),
+    inset 0 0 10px rgba(255,255,255,0.3);
+  animation-delay: 0.1s;
+}
+
+.history-number:nth-child(3n+1) {
+  background: radial-gradient(circle at 30% 30%, var(--christmas-green), #00695c);
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.3), 
+    0 0 15px rgba(10,135,84,0.5),
+    inset 0 0 10px rgba(255,255,255,0.3);
+  animation-delay: 0.2s;
+}
+
+.history-number::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 70%, transparent 60%, rgba(255,255,255,0.4) 100%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.history-number:hover {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 
+    0 8px 16px rgba(0,0,0,0.4), 
+    0 0 20px rgba(255,255,255,0.6),
+    inset 0 0 15px rgba(255,255,255,0.5);
+  z-index: 10;
+}
+
+/* Highlighted Number */
+.history-number.highlighted {
+  transform: scale(1.2);
+  animation: highlightPulse 2s infinite;
+  box-shadow: 
+    0 0 0 4px rgba(255,255,255,0.7),
+    0 8px 20px rgba(0,0,0,0.5), 
+    0 0 30px var(--christmas-gold),
+    inset 0 0 15px rgba(255,255,255,0.7);
+  z-index: 20;
+  position: relative;
+}
+
+@keyframes highlightPulse {
+  0% { box-shadow: 0 0 0 4px rgba(255,255,255,0.7), 0 8px 20px rgba(0,0,0,0.5), 0 0 30px var(--christmas-gold), inset 0 0 15px rgba(255,255,255,0.7); }
+  50% { box-shadow: 0 0 0 6px rgba(255,255,255,0.9), 0 8px 25px rgba(0,0,0,0.6), 0 0 40px var(--christmas-gold), inset 0 0 20px rgba(255,255,255,0.9); }
+  100% { box-shadow: 0 0 0 4px rgba(255,255,255,0.7), 0 8px 20px rgba(0,0,0,0.5), 0 0 30px var(--christmas-gold), inset 0 0 15px rgba(255,255,255,0.7); }
+}
+
+.history-number.highlighted::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(248,178,41,0.3) 0%, transparent 70%);
+  z-index: -1;
+  animation: rotateSlow 4s linear infinite;
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Snowflake Animation */
+.snowflakes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px rgba(255,255,255,0.3);
+  opacity: 0.8;
+  animation: snowfall linear infinite;
+}
+
+.snowflake:nth-child(1) {
+  left: 10%;
+  animation-duration: 15s;
+  animation-delay: 0s;
+}
+
+.snowflake:nth-child(2) {
+  left: 25%;
+  animation-duration: 12s;
+  animation-delay: 1s;
+}
+
+.snowflake:nth-child(3) {
+  left: 40%;
+  animation-duration: 18s;
+  animation-delay: 3s;
+}
+
+.snowflake:nth-child(4) {
+  left: 65%;
+  animation-duration: 14s;
+  animation-delay: 2s;
+}
+
+.snowflake:nth-child(5) {
+  left: 80%;
+  animation-duration: 16s;
+  animation-delay: 0.5s;
+}
+
+.snowflake:nth-child(6) {
+  left: 95%;
+  animation-duration: 13s;
+  animation-delay: 4s;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px)) rotate(360deg);
+  }
+}
+
+/* Festive Decoration */
+.festive-decoration {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  gap: 1.5rem;
+}
+
+.decoration-item {
+  font-size: 2.5rem;
+  animation: bounce 2s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * 0.2s);
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+.decoration-item:nth-child(1) { --i: 0; }
+.decoration-item:nth-child(2) { --i: 1; }
+.decoration-item:nth-child(3) { --i: 2; }
+.decoration-item:nth-child(4) { --i: 3; }
+.decoration-item:nth-child(5) { --i: 4; }
+
+/* Footer Styles */
+footer {
+  margin-top: 3rem;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--snow-white);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  position: relative;
+  background: rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" opacity="0.2" d="M0,128L48,144C96,160,192,192,288,197.3C384,203,480,181,576,181.3C672,181,768,203,864,218.7C960,235,1056,245,1152,234.7C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+  background-size: cover;
+  transform: rotate(180deg);
+}
+
+footer .christmas-icons {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  letter-spacing: 15px;
+}
+
+footer .christmas-icons span {
+  display: inline-block;
+  animation: footerIconFloat 3s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+}
+
+footer .christmas-icons span:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+footer .christmas-icons span:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes footerIconFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+footer i {
+  margin: 0 5px;
+  color: var(--christmas-gold);
+  animation: footerIconPulse 2s ease-in-out infinite;
+}
+
+@keyframes footerIconPulse {
+  0% { text-shadow: 0 0 5px rgba(248,178,41,0.5); }
+  50% { text-shadow: 0 0 15px rgba(248,178,41,0.8); }
+  100% { text-shadow: 0 0 5px rgba(248,178,41,0.5); }
+}
+
+/* Number Check Form */
+.number-check-container {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.number-check-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--christmas-gold), transparent);
+}
+
+.check-btn {
+  background: linear-gradient(45deg, var(--christmas-gold), #e6a800, var(--christmas-gold));
+  background-size: 200% auto;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.check-btn:hover {
+  background-position: right center;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+#number-check-result {
+  font-size: 1.1rem;
+  font-weight: 500;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#number-check-result i {
+  margin-right: 8px;
+  font-size: 1.3rem;
+}
+
+#number-check-result.text-success i {
+  animation: successPulse 2s infinite;
+}
+
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h1::before, h1::after {
+    font-size: 2rem;
+    margin: 0 10px;
+  }
+  
+  #pingo-number {
+    font-size: 8rem;
+    width: 250px;
+    height: 250px;
+  }
+  
+  #start-button {
+    font-size: 1.5rem;
+    padding: 0.75rem 2rem;
+  }
+  
+  .decoration-item {
+    font-size: 2rem;
+  }
 }
