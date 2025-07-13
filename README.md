@@ -23,7 +23,7 @@
 
 ## 📸 Screenshot
 
-![Christmas Bingo Screenshot](asset/screenshot.png)
+![Christmas Bingo Screenshot](asset/screenshot_new.png)
 
 ## 🚀 Schnellstart
 
