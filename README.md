@@ -1,79 +1,79 @@
-# 🎄 Christmas Party Bingo
+# 🎄 Weihnachts-Bingo
 
-[![Live Demo](https://img.shields.io/badge/DEMO-LIVE-brightgreen.svg)](https://akeschmidi.github.io/partybingo-gh-pages/) 
+[![Live Demo](https://img.shields.io/badge/DEMO-LIVE-brightgreen.svg)](https://akeschmidi.github.io/christmas-bingo-game/)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3.svg)](https://getbootstrap.com/)
 [![jQuery](https://img.shields.io/badge/jQuery-3.6.0-0769AD.svg)](https://jquery.com/)
 
-> A festive Christmas-themed bingo game perfect for holiday parties, "Schrottwichteln" events, or cozy bingo evenings with friends and family.
+> Ein festliches Weihnachts-Bingo perfekt für Weihnachtsfeiern, "Schrottwichteln" oder gemütliche Bingo-Abende mit Freunden und Familie.
 
-## ✨ Features
+## ✨ Funktionen
 
-- 🎲 Random number generator from 1-90 with audio effects
-- 🔄 Dynamic button text that changes after first number is drawn
-- 🔍 Number verification function to check if a number has been drawn
-- ✅ Visual highlighting of verified numbers
-- 🎅 Beautiful Christmas-themed UI with animations and effects
-- 📱 Fully responsive design for all devices
-- 💾 Game state saved in browser localStorage
+- 🎲 Zufallszahlengenerator von 1-90 mit Soundeffekten
+- 🔄 Dynamischer Button-Text, der sich nach der ersten Ziehung ändert
+- 🔍 Verifikationsfunktion zur Überprüfung gezogener Zahlen
+- ✅ Visuelle Hervorhebung verifizierter Zahlen
+- 🎅 Wunderschönes weihnachtliches Design mit Animationen und Effekten
+- 📱 Vollständig responsives Design für alle Geräte
+- 💾 Spielstand wird im Browser-LocalStorage gespeichert
 
 ## 🔴 Live Demo
 
-**[Try the Christmas Bingo Live Demo Here](https://akeschmidi.github.io/partybingo-gh-pages/)**
+**[Weihnachts-Bingo Live Demo hier ausprobieren](https://akeschmidi.github.io/christmas-bingo-game/)**
 
 ## 📸 Screenshot
 
 ![Christmas Bingo Screenshot](asset/screenshot.png)
 
-## 🚀 Quick Start
+## 🚀 Schnellstart
 
-### Option 1: Clone the Repository
+### Option 1: Repository klonen
 
 ```bash
-# Clone with GitHub CLI
-git clone https://github.com/akeschmidi/partybingo-gh-pages.git
+# Mit GitHub CLI klonen
+git clone https://github.com/akeschmidi/christmas-bingo-game.git
 
-# Navigate to project directory
-cd partybingo-gh-pages
+# In das Projektverzeichnis wechseln
+cd christmas-bingo-game
 
-# Open in your browser
+# Im Browser öffnen
 open index.html
 ```
 
-### Option 2: Download as ZIP
+### Option 2: Als ZIP herunterladen
 
-1. Click the green "Code" button at the top of the [GitHub repository](https://github.com/akeschmidi/partybingo-gh-pages)
-2. Select "Download ZIP"
-3. Extract the ZIP file
-4. Open `index.html` in your web browser
+1. Klicken Sie auf die grüne "Code"-Schaltfläche oben im [GitHub-Repository](https://github.com/akeschmidi/christmas-bingo-game)
+2. Wählen Sie "ZIP herunterladen"
+3. Entpacken Sie die ZIP-Datei
+4. Öffnen Sie `index.html` in Ihrem Webbrowser
 
-## 🎮 How to Play
+## 🎮 Spielanleitung
 
-1. Click the "Start" button to begin drawing numbers
-2. Click "Stop" to draw a random number
-3. The button will change to "Nächste Zahl" (Next Number) after the first draw
-4. Use the verification form to check if a specific number has been drawn
-5. Click on highlighted numbers to remove the highlight
-6. Click "Reset" to start a new game
+1. Klicken Sie auf "Start", um mit der Ziehung der Zahlen zu beginnen
+2. Klicken Sie auf "Stop", um eine Zufallszahl zu ziehen
+3. Nach der ersten Ziehung ändert sich der Button-Text zu "Nächste Zahl"
+4. Verwenden Sie das Überprüfungsformular, um zu kontrollieren, ob eine bestimmte Zahl bereits gezogen wurde
+5. Klicken Sie auf hervorgehobene Zahlen, um die Hervorhebung zu entfernen
+6. Klicken Sie auf "Reset", um ein neues Spiel zu starten
 
-## 🛠️ Technologies
+## 🛠️ Technologien
 
 - HTML5
-- CSS3 with advanced animations
+- CSS3 mit fortgeschrittenen Animationen
 - JavaScript (ES6+)
 - Bootstrap 5.3
 - jQuery 3.6.0
 - Font Awesome 6.4.0
 - Google Fonts (Montserrat)
 
-## 📄 License
+## 📄 Lizenz
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+Dieses Projekt ist unter der MIT-Lizenz lizenziert - siehe die [LICENSE](LICENSE) Datei für Details.
 
-## 👥 Contributing
+## 👥 Mitwirken
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/akeschmidi/partybingo-gh-pages/issues).
+Beiträge, Issues und Feature-Anfragen sind willkommen! Schauen Sie gerne auf der [Issues-Seite](https://github.com/akeschmidi/christmas-bingo-game/issues) vorbei.
 
 ---
 
-Made with ❤️ for Christmas bingo enthusiasts everywhere
+Mit ❤️ gemacht für Weihnachts-Bingo-Enthusiasten überall
